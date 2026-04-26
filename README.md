@@ -3,76 +3,103 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![PyPI](https://img.shields.io/badge/PyPI-v0.1.0-blue?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/pdfpage/)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen?style=for-the-badge)](tests/)
 
 **PDF page extraction, splitting, merging, and rotation CLI tool.** Pipe-friendly, scriptable, no GUI required.
 
 ---
 
-<!-- Original SVG header for pdfpage -->
 <p align="center">
-  <svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-    <!-- Background -->
-    <rect width="600" height="200" fill="#1e2433"/>
+<svg width="640" height="220" viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#1a1a2e"/>
+<stop offset="50%" stop-color="#16213e"/>
+<stop offset="100%" stop-color="#0f0f23"/>
+</linearGradient>
+<linearGradient id="docRed" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#e74c3c"/>
+<stop offset="100%" stop-color="#c0392b"/>
+</linearGradient>
+<linearGradient id="docBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#3498db"/>
+<stop offset="100%" stop-color="#2980b9"/>
+</linearGradient>
+<linearGradient id="docGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#2ecc71"/>
+<stop offset="100%" stop-color="#27ae60"/>
+</linearGradient>
+<linearGradient id="pageWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" stop-color="#ffffff"/>
+<stop offset="100%" stop-color="#ecf0f1"/>
+</linearGradient>
+<filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+<feGaussianBlur stdDeviation="2" result="blur"/>
+<feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+</defs>
 
-    <!-- Grid pattern -->
-    <defs>
-      <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
-        <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#2a3245" stroke-width="0.5"/>
-      </pattern>
-      <linearGradient id="docGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#e74c3c"/>
-        <stop offset="100%" style="stop-color:#c0392b"/>
-      </linearGradient>
-      <linearGradient id="pageGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#ecf0f1"/>
-        <stop offset="100%" style="stop-color:#bdc3c7"/>
-      </linearGradient>
-    </defs>
-    <rect width="600" height="200" fill="url(#grid)"/>
+<rect width="640" height="220" rx="12" fill="url(#bg)"/>
 
-    <!-- PDF document icon (left) -->
-    <rect x="80" y="40" width="100" height="130" rx="8" fill="url(#docGrad)"/>
-    <rect x="90" y="55" width="80" height="12" rx="2" fill="#fff" opacity="0.9"/>
-    <rect x="90" y="75" width="60" height="8" rx="2" fill="#fff" opacity="0.6"/>
-    <rect x="90" y="90" width="70" height="8" rx="2" fill="#fff" opacity="0.6"/>
-    <rect x="90" y="105" width="50" height="8" rx="2" fill="#fff" opacity="0.6"/>
-    <!-- Folded corner -->
-    <path d="M 160 40 L 180 40 L 180 60 Z" fill="#922b21"/>
-    <path d="M 160 40 L 180 60 L 160 60 Z" fill="#c0392b"/>
+<g fill="none" stroke="#2d2d44" stroke-width="0.5">
+<line x1="0" y1="55" x2="640" y2="55"/>
+<line x1="0" y1="110" x2="640" y2="110"/>
+<line x1="0" y1="165" x2="640" y2="165"/>
+<line x1="160" y1="0" x2="160" y2="220"/>
+<line x1="320" y1="0" x2="320" y2="220"/>
+<line x1="480" y1="0" x2="480" y2="220"/>
+</g>
 
-    <!-- Arrow transformation (center) -->
-    <path d="M 200 100 L 280 100" stroke="#3498db" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 4"/>
-    <polygon points="290,100 270,90 270,110" fill="#3498db"/>
+<g transform="translate(40, 50)">
+<rect width="90" height="120" rx="6" fill="url(#docRed)"/>
+<rect x="8" y="15" width="60" height="8" rx="2" fill="#fff" opacity="0.95"/>
+<rect x="8" y="30" width="74" height="5" rx="1.5" fill="#fff" opacity="0.5"/>
+<rect x="8" y="42" width="55" height="5" rx="1.5" fill="#fff" opacity="0.4"/>
+<rect x="8" y="54" width="65" height="5" rx="1.5" fill="#fff" opacity="0.4"/>
+<rect x="8" y="66" width="40" height="5" rx="1.5" fill="#fff" opacity="0.3"/>
+<path d="M 78 0 L 90 0 L 90 12 Z" fill="#922b21"/>
+</g>
 
-    <!-- Split pages icon (right) -->
-    <rect x="310" y="50" width="55" height="110" rx="6" fill="url(#pageGrad)"/>
-    <rect x="320" y="65" width="35" height="6" rx="1" fill="#95a5a6"/>
-    <rect x="320" y="78" width="25" height="4" rx="1" fill="#bdc3c7"/>
-    <rect x="320" y="88" width="30" height="4" rx="1" fill="#bdc3c7"/>
+<path d="M 155 110 L 215 110" stroke="#3498db" stroke-width="3" stroke-linecap="round" filter="url(#glow)"/>
+<polygon points="225,110 205,95 205,125" fill="#3498db" filter="url(#glow)"/>
 
-    <rect x="365" y="50" width="55" height="110" rx="6" fill="url(#pageGrad)" opacity="0.8"/>
-    <rect x="375" y="65" width="35" height="6" rx="1" fill="#95a5a6"/>
-    <rect x="375" y="78" width="25" height="4" rx="1" fill="#bdc3c7"/>
-    <rect x="375" y="88" width="30" height="4" rx="1" fill="#bdc3c7"/>
+<g transform="translate(245, 50)">
+<rect width="75" height="50" rx="4" fill="url(#pageWhite)"/>
+<rect x="8" y="10" width="40" height="4" rx="1" fill="#bdc3c7"/>
+<rect x="8" y="20" width="30" height="3" rx="1" fill="#d0d5d9"/>
+<rect x="8" y="28" width="35" height="3" rx="1" fill="#d0d5d9"/>
+<rect x="8" y="36" width="25" height="3" rx="1" fill="#d0d5d9"/>
 
-    <!-- Tool indicators (right side) -->
-    <g transform="translate(470, 60)">
-      <!-- Scissors icon for split -->
-      <circle cx="20" cy="30" r="18" fill="none" stroke="#2ecc71" stroke-width="2"/>
-      <path d="M 10 20 Q 20 35 30 20" stroke="#2ecc71" stroke-width="2" fill="none"/>
-      <text x="20" y="35" font-family="sans-serif" font-size="10" fill="#2ecc71" text-anchor="middle">SPLIT</text>
-    </g>
+<rect y="60" width="75" height="50" rx="4" fill="url(#pageWhite)" opacity="0.85"/>
+<rect x="8" y="10" width="40" height="4" rx="1" fill="#bdc3c7"/>
+<rect x="8" y="20" width="30" height="3" rx="1" fill="#d0d5d9"/>
+<rect x="8" y="28" width="35" height="3" rx="1" fill="#d0d5d9"/>
+<rect x="8" y="36" width="25" height="3" rx="1" fill="#d0d5d9"/>
+</g>
 
-    <g transform="translate(470, 100)">
-      <!-- Merge icon -->
-      <rect x="5" y="15" width="30" height="20" rx="3" fill="#9b59b6" opacity="0.8"/>
-      <rect x="15" y="15" width="30" height="20" rx="3" fill="#9b59b6"/>
-      <text x="25" y="50" font-family="sans-serif" font-size="10" fill="#9b59b6" text-anchor="middle">MERGE</text>
-    </g>
+<path d="M 345 110 L 405 110" stroke="#2ecc71" stroke-width="3" stroke-linecap="round" filter="url(#glow)"/>
+<polygon points="415,110 395,95 395,125" fill="#2ecc71" filter="url(#glow)"/>
 
-    <!-- Bottom accent -->
-    <rect x="0" y="195" width="600" height="5" fill="#e74c3c" opacity="0.7"/>
-  </svg>
+<g transform="translate(435, 50)">
+<rect width="90" height="120" rx="6" fill="url(#docGreen)"/>
+<rect x="8" y="15" width="60" height="8" rx="2" fill="#fff" opacity="0.95"/>
+<rect x="8" y="30" width="74" height="5" rx="1.5" fill="#fff" opacity="0.5"/>
+<rect x="8" y="42" width="55" height="5" rx="1.5" fill="#fff" opacity="0.4"/>
+<rect x="8" y="54" width="65" height="5" rx="1.5" fill="#fff" opacity="0.4"/>
+<rect x="8" y="66" width="40" height="5" rx="1.5" fill="#fff" opacity="0.3"/>
+<path d="M 78 0 L 90 0 L 90 12 Z" fill="#1e8449"/>
+</g>
+
+<g transform="translate(545, 80)">
+<text x="0" y="0" font-family="monospace" font-size="10" fill="#e74c3c" font-weight="bold">PDF</text>
+<text x="0" y="15" font-family="monospace" font-size="9" fill="#3498db">extract</text>
+<text x="0" y="28" font-family="monospace" font-size="9" fill="#2ecc71">split</text>
+<text x="0" y="41" font-family="monospace" font-size="9" fill="#9b59b6">merge</text>
+<text x="0" y="54" font-family="monospace" font-size="9" fill="#f39c12">rotate</text>
+</g>
+
+<rect x="0" y="210" width="640" height="10" rx="0" fill="#e74c3c" opacity="0.6"/>
+</svg>
 </p>
 
 ---
